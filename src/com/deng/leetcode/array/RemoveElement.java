@@ -43,9 +43,12 @@ public class RemoveElement {
 		int num = 0;
 		int j = nums.length;
 		for(int i = 0; i < j; i++){
+			//判断数字是否等于目标值
 			if(nums[i] == val){
+				//等于目标值,目标值出现次数+1
 				num++;
 			}else {
+				//非目标值，把该值往前移动num位，覆盖目标位置的目标值
 				nums[i - num] = nums[i];
 			}
 		}

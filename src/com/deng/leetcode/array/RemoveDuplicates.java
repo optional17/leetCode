@@ -35,14 +35,24 @@ public class RemoveDuplicates {
 		if(nums.length == 0){
 			return 0;
 		}
+		//记录最新的非重复数字
 		int num = nums[0];
+		//记录非重复数量，同时也是下一个非重复数据插入数组的下标
 		int local = 1;
+		//排除数组第一个元素，i从1开始
 		for(int i = 1, j = nums.length; i < j; i++){
+			//判断与最新的非重复数字是否相等
 			if(nums[i] != num){
+				//如果不相等
+				//替换非重复数字
 				num = nums[i];
+				//最新非重复数字插入数组，覆盖原来下标的数据
 				nums[local] = num;
+				//下标、计数+1
 				local++;
 			}
+
+			//如果相等，则忽略
 		}
 		return local;
 	}
